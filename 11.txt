@@ -1,7 +1,7 @@
   public Predicate toPredicate(Root<Plant> root, CriteriaQuery<? query, CriteriaBuilder cb) {
             List<Predicate> predicateList = new ArrayList<Predicate>();
             // 标识符
-            if (searchMap.get("pid") != null && !"".equals(searchMap.get("pid"))) {
+            if (searchMap.get("pid") != null && !"".equals(searchMap.get("id"))) {
                 predicateList.add(cb.like(root.get("pid").as(String.class), "%" + (String) searchMap.get("pid") + "%"));
             }
             // 品种大类
