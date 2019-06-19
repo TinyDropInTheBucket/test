@@ -5,7 +5,7 @@
                 predicateList.add(cb.like(root.get("pid").as(String.class), "%" + (String) searchMap.get("pid") + "%"));
             }
             // 品种大类
-            if (searchMap.get("kind") != null && !"".equals(searchMap.get("kind"))) {
+            if (searchMap.get("kind") != null ) {
                 predicateList.add(cb.like(root.get("kind").as(String.class), "%" + (String) searchMap.get("kind") + "%"));
             }
             // 品种名称
