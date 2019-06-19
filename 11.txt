@@ -1,0 +1,13 @@
+  public Predicate toPredicate(Root<Plant> root, CriteriaQuery<? query, CriteriaBuilder cb) {
+            List<Predicate> predicateList = new ArrayList<Predicate>();
+            // 标识符
+            if (searchMap.get("pid") != null && !"".equals(searchMap.get("pid"))) {
+                predicateList.add(cb.like(root.get("pid").as(String.class), "%" + (String) searchMap.get("pid") + "%"));
+            }
+            // 品种大类
+            if (searchMap.get("kind") != null && !"".equals(searchMap.get("kind"))) {
+                predicateList.add(cb.like(root.get("kind").as(String.class), "%" + (String) searchMap.get("kind") + "%"));
+            }
+            // 品种名称
+            if (searchMap.get("variety") != null && !"".equals(searchMap.get("variety"))) {
+                predicateList.add(cb.like(root.get("variety").as(String.class), "%" + (String) searchMap.get("variety") + "%"));
